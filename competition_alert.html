@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Competitions, Teams &amp; Leagues</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+        <h3>Competitions, Teams &amp; Leagues</h3>
+        <br>
+        <div class="mulitple-teams">
+          <div class="alert alert-danger" role="alert">
+            <p><strong>ALERT</strong>: This user is on too many teams.</p>
+          </div>
+          <p>You must choose one team for the user to continue.</p>
+          <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                    <th>Team Name</th>
+                    <th>Number of Members</th>
+                    <th>Team Captain</th>
+                    <th></th>
+                </thead>
+                <tr>
+                    <td>Fancypants Forever</td>
+                    <td>5</td>
+                    <td>Fancypants McGee<br><strong>Current User</strong></td>
+                    <td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#chooseTeamModal">KEEP</button></td>
+                </tr>
+                <tr>
+                    <td>Plain Pants are the Best</td>
+                    <td>10</td>
+                    <td>Penny Plainpants</td>
+                    <td><button type="button" class="btn btn-default">KEEP</button></td>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" tabindex="-1" role="dialog" id="chooseTeamModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Keep user on team <strong>Fancypants Forever</strong></h4>
+            </div>
+            <div class="modal-body">
+              <p>Continuing will keep user <strong>Fancypants McGee</strong> on team <strong>Fancypants Forever</strong>.<br><br>Note that the user will be removed from all other teams. If that user was captain of that team, another captain will be chosen automatically. If that user was the only member of the team, the team will be delete. Click <strong>Contine</strong> to continue or <strong>Go Back</strong> to choose another team.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Go Back</button>
+              <button type="button" class="btn btn-primary">Continue</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
