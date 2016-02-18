@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,11 +19,34 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class="container">
+      <h3>Tracking</h3>
+      <h4>View Tracking Data</h4>
+      <div class="col-md-6">
+        <input type="checkbox" checked>View Date Range
+        <input type="checkbox">View Single Date
+        <div class="input-daterange input-group" data-provide="datepicker" id="datepicker">
+          <input type="text" class="form-control" name="start" />
+          <span class="input-group-addon">to</span>
+          <input type="text" class="form-control" name="end" />
+        </div>
+        <!-- single date datepicker -->
+<!--         <div class="input-group date" data-provide="datepicker" id="datepicker">
+          <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        </div> -->
+        <button type="button" class="btn btn-primary">View Tracking Data</button>
+      </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- https://github.com/eternicode/bootstrap-datepicker -->
+    <script src="datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script>$('.datepicker div').datepicker({
+      format: "yyyy-mm-dd"
+      });
+    </script>
   </body>
 </html>
