@@ -37,10 +37,10 @@
             <th></th>
           </thead>
           <tr>
-            <td>Ready, Set, Fancypants!</td>
-            <td>Ready, Set, Go! (8 wk)</td>
+            <td>Fancypants Face Off</td>
+            <td>Face Off</td>
             <td>February 15, 2016 &mdash; March 30, 2016</td>
-            <td><button type="button" class="btn btn-default">View Team</button><button type="button" class="btn btn-default">Switch Teams</button><button type="button" class="btn btn-default">Remove User from Competition</button></td>
+            <td><a class="btn btn-default" href="competition_team.html">View Team</a><button type="button" class="btn btn-default" data-toggle="modal" data-target="#switchTeamModal">Switch Teams</button><button type="button" class="btn btn-default">Remove User from Competition</button></td>
           </tr>
           <tr>
             <td>Floss Your Teeth</td>
@@ -97,6 +97,41 @@
         </table>
       </div>
   </div>
+  <div class="modal fade" tabindex="-1" role="dialog" id="switchTeamModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Switch Team for user <strong>Fancypants McGee</strong></h4>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped">
+            <thead>
+              <th>Team Name</th>
+              <th>Team Captain</th>
+              <th>Number of Team Members</th>
+              <th></th>
+            </thead>
+            <tr>
+              <td>Fancier Pants Than You</td>
+              <td>Frank Fancypants</td>
+              <td>6</td>
+              <td><a class="btn btn-default" href="competition_team.html">Join Team</a></td>
+            </tr>
+            <tr>
+              <td>Not So Fancy Pants</td>
+              <td>Betty Boringpants</td>
+              <td>11</td>
+              <td>Team is currently full</td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Go Back</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
