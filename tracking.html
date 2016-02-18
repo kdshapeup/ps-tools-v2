@@ -30,10 +30,6 @@
           <span class="input-group-addon">to</span>
           <input type="text" class="form-control" name="end" />
         </div>
-        <!-- single date datepicker -->
-<!--         <div class="input-group date" data-provide="datepicker" id="datepicker">
-          <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-        </div> -->
         <button type="button" class="btn btn-primary" id="showTracking">View Tracking Data</button>
         <div id="trackingData" style="display:none">
           <table class="table table-striped">
@@ -80,8 +76,47 @@
           </table>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#trackDataModal">Track More Data</button>
         </div>
-      </div>
-    </div>
+      </div> <!-- view tracking data -->
+      <h4>Get External Service Data</h4>
+      <div>
+        <input type="checkbox">View Validic Data
+        <input type="checkbox" checked>View FitBit Data
+        <input type="checkbox">View Fitlinxx Data
+        <br>
+        <input type="checkbox">View Date Range
+        <input type="checkbox" checked>View Single Date
+        <div class="input-group date" data-provide="datepicker" id="datepicker">
+          <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        </div>
+        <button type="button" class="btn btn-primary" id="showExternalData">Get Data</button>
+        <div id="externalServiceData" style="display:none">
+          <table class="table table-striped">
+            <thead>
+              <th>Source</th>
+              <th>Date</th>
+              <th>Tracking Category</th>
+              <th>Value</th>
+              <th></th>
+            </thead>
+            <tr>
+              <td>FitBit</td>
+              <td>2/18/16</td>
+              <td>Exercised</td>
+              <td>58 minutes</td>
+              <td><button type="button" class="btn btn-default">Track This Data</button></td>
+            </tr>
+            <tr>
+              <td>FitBit</td>
+              <td>2/18/16</td>
+              <td>Walked</td>
+              <td>10,595 steps</td>
+              <td><button type="button" class="btn btn-default">Track This Data</button></td>
+            </tr>
+          </table>
+          <button type="button" class="btn btn-primary">Manually Pull Data</button>
+        </div>
+      </div> <!-- external service data -->
+    </div> <!-- container -->
     
     <!-- Modal -->
     <div class="modal fade" id="trackDataModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -126,6 +161,9 @@
       $(document).ready(function() {
         $('#showTracking').click(function() {
           $('#trackingData').show();
+        });
+        $('#showExternalData').click(function() {
+          $('#externalServiceData').show();
         });
       });
     </script>
