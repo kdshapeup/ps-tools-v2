@@ -37,7 +37,12 @@
     <script src="jstree/dist/jstree.min.js"></script>
     <script>
       $(document).ready(function() {
-        $(function () { $('#jstree_demo_div').jstree(); });
+        $(function () { $('#jstree_demo_div').jstree({
+          "checkbox" : {
+            "keep_selected_style" : false
+          },
+          "plugins" : [ "checkbox" ]
+        }); });
       });
     </script>
   </body>
