@@ -30,32 +30,32 @@
     <h4>Current Competitions</h4>
     <div class="col-md-12">
       <table class="table table-striped">
-          <thead>
-            <th>Competition Name</th>
-            <th>Competition Type</th>
-            <th>Dates</th>
-            <th></th>
-          </thead>
-          <tr>
-            <td>Fancypants Face Off</td>
-            <td>Face Off</td>
-            <td>February 15, 2016 &mdash; March 30, 2016</td>
-            <td><a class="btn btn-default" href="competition_team.html">View Team</a><button type="button" class="btn btn-default" data-toggle="modal" data-target="#switchTeamModal">Switch Teams</button><button type="button" class="btn btn-default">Remove User from Competition</button></td>
-          </tr>
-          <tr>
-            <td>Floss Your Teeth</td>
-            <td>Bonus Challenge</td>
-            <td>February 15, 2016 &mdash; February 21, 2016</td>
-            <td>Should we have actions here?</td>
-          </tr>
-          <tr>
-            <td>Refrain From Drinking Soda</td>
-            <td>Last One Standing</td>
-            <td>begins February 15, 2016</td>
-            <td><button type="button" class="btn btn-default">View LOS Log</button></td>
-          </tr>
-        </table>
-      </div>
+        <thead>
+          <th>Competition Name</th>
+          <th>Competition Type</th>
+          <th>Dates</th>
+          <th></th>
+        </thead>
+        <tr>
+          <td>Fancypants Face Off</td>
+          <td>Face Off</td>
+          <td>February 15, 2016 &mdash; March 30, 2016<button data-toggle="modal" data-target="#moreDates"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></button></td>
+          <td><a class="btn btn-default" href="competition_team.html">View Team</a><button type="button" class="btn btn-default" data-toggle="modal" data-target="#switchTeamModal">Switch Teams</button><button type="button" class="btn btn-default">Remove User from Competition</button></td>
+        </tr>
+        <tr>
+          <td>Floss Your Teeth</td>
+          <td>Bonus Challenge</td>
+          <td>February 15, 2016 &mdash; February 21, 2016</td>
+          <td>Should we have actions here?</td>
+        </tr>
+        <tr>
+          <td>Refrain From Drinking Soda</td>
+          <td>Last One Standing</td>
+          <td>begins February 15, 2016</td>
+          <td><button type="button" class="btn btn-default">View LOS Log</button></td>
+        </tr>
+      </table>
+    </div> <!-- current competitions div -->
     <h4>Past Competitions</h4>
     <div class="col-md-12">
       <table class="table table-striped">
@@ -97,6 +97,29 @@
         </table>
       </div>
   </div>
+  <div class="modal fade" tabindex="-1" role="dialog" id="moreDates">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4>Dates for <strong>FancyPants Face Off</strong></h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li><strong>Registration Start Date: </strong>February 1, 2016</li>
+            <li><strong>Competition Start Date: </strong>February 15, 2016</li>
+            <li><strong>Registration End Date: </strong>February 22, 2016</li>
+            <li><strong>Competition End Date: </strong>March 30, 2016</li>
+            <li><strong>Weekly Reporting Hours: </strong>48</li>
+            <li><strong>Final Reporting Houts: </strong>96</li>
+          </ul>
+        </div> <!-- modal-body -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
   <div class="modal fade" tabindex="-1" role="dialog" id="switchTeamModal">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -105,6 +128,7 @@
           <h4 class="modal-title">Switch Team for user <strong>Fancypants McGee</strong></h4>
         </div>
         <div class="modal-body">
+          <h5>Open Teams</h5>
           <table class="table table-striped">
             <thead>
               <th>Team Name</th>
@@ -125,6 +149,25 @@
               <td>Team is currently full</td>
             </tr>
           </table>
+          <h5>Closed Teams</h5>
+          <p>Enter an access code</p>
+          <input type="text"><a class="btn btn-default" id="showClosedTeam">Search</a>
+          <div id="closedTeamSearch" style="display:none;">
+            <table class="table table-striped">
+              <thead>
+                <th>Team Name</th>
+                <th>Team Captain</th>
+                <th>Number of Team Members</th>
+                <th></th>
+              </thead>
+              <tr>
+                <td>Fancier Pants Than You</td>
+                <td>Frank Fancypants</td>
+                <td>6</td>
+                <td><a class="btn btn-default" href="competition_team.html">Join Team</a></td>
+              </tr>
+            </table>
+          </div> <!-- closedTeamSearch -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Go Back</button>
@@ -136,6 +179,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#showClosedTeam').click(function() {
+          $('#closedTeamSearch').show();
+        });
+        $('#showMoreDates').click(function() {
+          $('#moreDates').show();
+        });
+      });
+    </script>
   </body>
 </html>
 
