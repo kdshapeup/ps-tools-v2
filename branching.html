@@ -20,15 +20,38 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
-      <div id="jstree_demo_div">
-        <ul>
-          <li>Root node 1</li>
-          <li>Root node 2</li>
-        </ul>
+    <div class="container">
+      <h3>Branching &amp; Locations</h3>
+      <p>Search for a branch or location:</p>
+      <input type="text">
+      <br>
+      <h4>Available Branches and Locations</h4>
+        <div id="branching">
+          <ul>
+            <li>Providence</li>
+            <li>Boston</li>
+            <li><a href="#" class="jstree-clicked">Remote</a></li>
+            <li class="jstree-open">
+              <a href="#" class="jstree-clicked" data-type="error">Hub</a>
+              <ul class="jstree-unclicked">
+                <li>Hub</li>
+                <li>No Hub</li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="jstree-clicked">Incentives</a>
+              <ul>
+                <li><a href="#" class="jstree-clicked">Employee</a></li>
+                <li>Spouse</li>
+                <li>New Hire</li>
+                <li>No Incentives</li>
+              </ul>
+            </li>
+          </ul>
 
-      </div> <!-- jstree demo div -->
-
+        </div> <!-- jstree demo div -->
+    </div> <!-- container div -->
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -37,11 +60,19 @@
     <script src="jstree/dist/jstree.min.js"></script>
     <script>
       $(document).ready(function() {
-        $(function () { $('#jstree_demo_div').jstree({
+        $(function () { $('#branching').jstree({
           "checkbox" : {
             "keep_selected_style" : false
           },
-          "plugins" : [ "checkbox" ]
+          "types" : {
+            "error" : {
+              "icon" : "glyphicon glyphicon-exclamation-sign"
+            },
+            "default" : {
+              "icon" : "none"
+            }
+          },
+          "plugins" : [ "checkbox", "types"]
         }); });
       });
     </script>
