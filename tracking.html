@@ -79,7 +79,7 @@
       </div> <!-- view tracking data -->
       <h4>Get External Service Data</h4>
       <div>
-        <input type="checkbox">View Validic Data
+        <input type="checkbox" checked>View Validic Data
         <input type="checkbox" checked>View FitBit Data
         <input type="checkbox">View Fitlinxx Data
         <br>
@@ -112,6 +112,20 @@
               <td>10,595 steps</td>
               <td><button type="button" class="btn btn-default">Track This Data</button></td>
             </tr>
+            <tr>
+              <td>Validic</td>
+              <td>2/18/16</td>
+              <td>Exercised</td>
+              <td>52 minutes</td>
+              <td><button type="button" class="btn btn-default">Track This Data</button></td>
+            </tr>
+            <tr>
+              <td>Validic</td>
+              <td>2/18/16</td>
+              <td>Walked</td>
+              <td>10,959 steps</td>
+              <td><button type="button" class="btn btn-default">Track This Data</button></td>
+            </tr>
           </table>
           <button type="button" class="btn btn-primary">Manually Pull Data</button>
         </div>
@@ -127,25 +141,36 @@
             <h4 class="modal-title" id="myModalLabel">Track Data for User <strong>Fancypants McGee</strong></h4>
           </div>
           <div class="modal-body">
-            <h5>Date to Track For</h5>
+            <input type="checkbox">Track for Date Range
+            <input type="checkbox" checked>Track for Single Date
             <div class="input-group date" data-provide="datepicker" id="datepicker">
               <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
             </div>
-            <h5>Tracking Category</h5>
-            <div class="dropdown">
-              <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Select a Category
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dLabel">
-                <li>Exercised</li>
-                <li>Walked</li>
-              </ul>
+            <div>
+              <table class="table table-striped">
+                <tr>
+                  <td>Walked</td>
+                  <td>
+                    <label for="steps">Steps</label>
+                    <input type="text" id="steps">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Exercised</td>
+                  <td>
+                    <label for="exercised">Minutes</label>
+                    <input type="text" id="exercised">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Did you meditate?</td>
+                  <td>
+                    <input type="radio">Yes
+                    <input type="radio">No
+                  </td>
+                </tr>
+              </table>
             </div>
-            <h5>Value</h5>
-            <form>
-              Enter a Tracking Value
-              <input type="text">
           </div> <!-- modal-body -->
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Go Back</button>
