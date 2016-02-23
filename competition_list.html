@@ -46,13 +46,13 @@
           <td>Floss Your Teeth</td>
           <td>Bonus Challenge</td>
           <td>February 15, 2016 &mdash; February 21, 2016</td>
-          <td>Should we have actions here?</td>
+          <td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#bonusChallengeLog">View Bonus Challenge Log</button></td>
         </tr>
         <tr>
           <td>Refrain From Drinking Soda</td>
           <td>Last One Standing</td>
           <td>begins February 15, 2016</td>
-          <td><button type="button" class="btn btn-default">View LOS Log</button></td>
+          <td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#losLog">View LOS Log</button></td>
         </tr>
       </table>
     </div> <!-- current competitions div -->
@@ -175,6 +175,64 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="bonusChallengeLog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4>Tracking for <strong>Fancypants McGee</strong> for bonus challenge <strong>Floss Your Teeth</strong></h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li><strong>Monday, February 15, 2016: </strong>Yes</li>
+            <li><strong>Tuesday, February 16, 2016: </strong>No</li>
+            <li><strong>Wednesday, February 17, 2016: </strong>Yes</li>
+            <li><strong>Thursday, February 18, 2016: </strong>no data tracked</li>
+            <li><strong>Friday, February 19, 2016: </strong>no data tracked</li>
+            <li><strong>Saturday, February 20, 2016: </strong>no data tracked</li>
+            <li><strong>Sunday, February 21, 2016: </strong>no data tracked</li>
+          </ul>
+        </div> <!-- modal-body -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="losLog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4>Log for <strong>Refrain from Drinking Soda</strong></h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>On 2016-02-22 at 08:51:22, Jacqueline Lyons-Amin (ID: 352833) tracked YES for 2/22</li>
+            <li>On 2016-02-22 at 09:39:06, Laurie Norberg (ID: 1237323) JOINED the challenge</li>
+            <li>On 2016-02-22 at 10:04:47, Jessica Toussaint (ID: 1318751) JOINED the challenge</li>
+            <li>On 2016-02-22 at 13:41:36, Renee Gillen (ID: 1758894) tracked YES for 2/22</li>
+            <li>On 2016-02-22 at 19:01:52, Rebecca Murray (ID: 1841137) tracked YES for 2/22</li>
+            <li>On 2016-02-22 at 20:06:14, Phil Penny (ID: 774729) tracked YES for 2/22</li>
+            <li>On 2016-02-23 at 08:02:49, Amanda Carter (ID: 1854278) tracked YES for 2/22</li>
+            <li>On 2016-02-23 at 08:23:22, Alison Thebado (ID: 1841139) tracked YES for 2/22</li>
+            <li>On 2016-02-23 at 08:32:40, Hadley Avery (ID: 1625417) tracked YES for 2/22</li>
+            <li>On 2016-02-23 at 08:49:18, Katy Denham (ID: 1245992) tracked YES for 2/22</li>
+            <li>On 2016-02-23 at 09:01:55, Jessica Toussaint (ID: 1318751) was ELIMINATED (NEVER tracked YES)</li>
+            <li>On 2016-02-23 at 09:13:38, Julie Carey (ID: 1888729) tracked YES for 2/22</li>
+            <li>On 2016-02-23 at 09:32:00, Laurie Norberg (ID: 1237323) was ELIMINATED (last tracked YES on 2/22)</li>
+            <li>On 2016-02-23 at 10:01:36, Morgan Johanson (ID: 1899601) tracked YES for 2/22</li>
+          </ul>
+        </div> <!-- modal-body -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  
+  
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
