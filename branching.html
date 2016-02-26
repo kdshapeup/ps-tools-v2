@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="jstree/dist/themes/default/style.min.css" />
+    <link rel="stylesheet" href="threeview/dist/bootstrap-treeview.min.css" />
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -21,35 +21,9 @@
   </head>
   <body>
     <div class="container">
-      <h3>Branching &amp; Locations</h3>
-      <p>Search for a branch or location:</p>
-      <input type="text">
-      <br>
-      <h4>Available Branches and Locations</h4>
-        <div id="branching">
-          <ul>
-            <li>Providence</li>
-            <li>Boston</li>
-            <li><a href="#" class="jstree-clicked">Remote</a></li>
-            <li class="jstree-open">
-              <a href="#" class="jstree-clicked" data-type="error">Hub</a>
-              <ul class="jstree-unclicked">
-                <li>Hub</li>
-                <li>No Hub</li>
-              </ul>
-            </li>
-            <li>
-              <a href="#" class="jstree-clicked">Incentives</a>
-              <ul>
-                <li><a href="#" class="jstree-clicked">Employee</a></li>
-                <li>Spouse</li>
-                <li>New Hire</li>
-                <li>No Incentives</li>
-              </ul>
-            </li>
-          </ul>
-
-        </div> <!-- jstree demo div -->
+    
+    <div id="tree"></div>
+      
     </div> <!-- container div -->
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -57,23 +31,47 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <!-- jstree -->
-    <script src="jstree/dist/jstree.min.js"></script>
+    <script src="treeview/dist/bootstrap-treeview.min.js"></script>
     <script>
       $(document).ready(function() {
-        $(function () { $('#branching').jstree({
-          "checkbox" : {
-            "keep_selected_style" : false
+        var tree = [
+          {
+            text: "Parent 1",
+            nodes: [
+              {
+                text: "Child 1",
+                nodes: [
+                  {
+                    text: "Grandchild 1"
+                  },
+                  {
+                    text: "Grandchild 2"
+                  }
+                ]
+              },
+              {
+                text: "Child 2"
+              }
+            ]
           },
-          "types" : {
-            "error" : {
-              "icon" : "glyphicon glyphicon-exclamation-sign"
-            },
-            "default" : {
-              "icon" : "none"
-            }
+          {
+            text: "Parent 2"
           },
-          "plugins" : [ "checkbox", "types"]
-        }); });
+          {
+            text: "Parent 3"
+          },
+          {
+            text: "Parent 4"
+          },
+          {
+            text: "Parent 5"
+          }
+        ];
+        function getTree(tree) {
+          // Some logic to retrieve, or generate tree structure
+          return tree;
+        }
+        $('#tree').treeview({data: getTree(tree)});
       });
     </script>
   </body>
