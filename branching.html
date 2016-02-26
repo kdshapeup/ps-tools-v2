@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="threeview/dist/bootstrap-treeview.min.css" />
+    <link rel="stylesheet" href="treeview/dist/bootstrap-treeview.min.css" />
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -21,14 +21,22 @@
   </head>
   <body>
     <div class="container">
-    <h3>Locations &amp; Branching</h3>
-    <h4>Locations</h4>
-    <div id="locations-tree"></div>
-    <br>
-    <h4>Branching</h4>
-    <div id="branches-tree"></div>
+      <h3>Locations &amp; Branching</h3>
+      <h4>Locations</h4>
+      <label for="locations-search">Search Locations:</label>
+      <input type="search" id="locations-search">
+      <button><span class="glyphicon glyphicon-search"></span></button>
+      <div id="locations-tree"></div>
+      <br>
+      <h4>Branching</h4>
+      <label for="branches-search">Search Branches:</label>
+      <input type="search" id="branches-search">
+      <button><span class="glyphicon glyphicon-search"></span></button>
+      <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="info on rebranching">Re-Branch Based On Org Rules<span class="glyphicon glyphicon-info-sign"></span></button>      
+      <div id="branches-tree"></div>
       
     </div> <!-- container div -->
+
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -43,7 +51,10 @@
             text: "Boston"
           },
           {
-            text: "Providence"
+            text: "Providence",
+            state: {
+                checked: true
+              }
           },
           {
             text: "Remote"
@@ -52,6 +63,10 @@
         var branches = [
           {
             text: "Hub",
+            icon: "glyphicon glyphicon-exclamation-sign",
+            state: {
+              checked: true
+            },
             nodes: [
               {text: "Hub"},
               {text: "No Hub"}
@@ -59,20 +74,36 @@
           },
           {
             text: "Incentives",
+            state: {
+              checked: true
+            },
             nodes : [
-              {text: "Incentives"},
+              {
+                text: "Incentives",
+                state: {
+                checked: true
+                }
+              },
               {text: "No Incentives"}
               ]
           }
         ];
         $('#locations-tree').treeview({
           data: locations,
-          showCheckbox: true
+          showCheckbox: true,
+          highlightSelected: false
         });
         $('#branches-tree').treeview({
           data: branches,
-          showCheckbox: true
+          showCheckbox: true,
+          highlightSelected: false,
+          collapseIcon: "glyphicon glyphicon-chevron-down",
+          expandIcon: "glyphicon glyphicon-chevron-right",
+          levels: 0
         });
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })
       });
     </script>
   </body>
