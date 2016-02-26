@@ -21,8 +21,12 @@
   </head>
   <body>
     <div class="container">
-    
-    <div id="tree"></div>
+    <h3>Locations &amp; Branching</h3>
+    <h4>Locations</h4>
+    <div id="locations-tree"></div>
+    <br>
+    <h4>Branching</h4>
+    <div id="branches-tree"></div>
       
     </div> <!-- container div -->
     
@@ -34,44 +38,41 @@
     <script src="treeview/dist/bootstrap-treeview.min.js"></script>
     <script>
       $(document).ready(function() {
-        var tree = [
+        var locations = [
           {
-            text: "Parent 1",
-            nodes: [
-              {
-                text: "Child 1",
-                nodes: [
-                  {
-                    text: "Grandchild 1"
-                  },
-                  {
-                    text: "Grandchild 2"
-                  }
-                ]
-              },
-              {
-                text: "Child 2"
-              }
-            ]
+            text: "Boston"
           },
           {
-            text: "Parent 2"
+            text: "Providence"
           },
           {
-            text: "Parent 3"
-          },
-          {
-            text: "Parent 4"
-          },
-          {
-            text: "Parent 5"
+            text: "Remote"
           }
         ];
-        function getTree(tree) {
-          // Some logic to retrieve, or generate tree structure
-          return tree;
-        }
-        $('#tree').treeview({data: getTree(tree)});
+        var branches = [
+          {
+            text: "Hub",
+            nodes: [
+              {text: "Hub"},
+              {text: "No Hub"}
+              ]
+          },
+          {
+            text: "Incentives",
+            nodes : [
+              {text: "Incentives"},
+              {text: "No Incentives"}
+              ]
+          }
+        ];
+        $('#locations-tree').treeview({
+          data: locations,
+          showCheckbox: true
+        });
+        $('#branches-tree').treeview({
+          data: branches,
+          showCheckbox: true
+        });
       });
     </script>
   </body>
